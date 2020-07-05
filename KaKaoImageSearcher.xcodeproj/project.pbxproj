@@ -85,6 +85,7 @@
 				F3C3987A24B1EB28002E66B6 /* AppDelegate.swift */,
 				F3C3987C24B1EB28002E66B6 /* SceneDelegate.swift */,
 				F3C3989024B1ECE7002E66B6 /* Controllers */,
+				F3C3989324B22E2D002E66B6 /* Extensions */,
 				F3C3988024B1EB28002E66B6 /* Main.storyboard */,
 				F3C3988324B1EB2A002E66B6 /* Assets.xcassets */,
 				F3C3988524B1EB2A002E66B6 /* LaunchScreen.storyboard */,
@@ -100,6 +101,13 @@
 				F3C3989124B1ED2C002E66B6 /* ImageContainerViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F3C3989324B22E2D002E66B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

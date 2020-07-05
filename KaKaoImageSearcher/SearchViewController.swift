@@ -8,13 +8,23 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-
+class SearchViewController: UIViewController, UISearchResultsUpdating {
+    
+    
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    func setSearchController() {
+        self.navigationItem.titleView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }
-
