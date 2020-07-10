@@ -15,6 +15,7 @@
 		F3C3988724B1EB2A002E66B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C3988524B1EB2A002E66B6 /* LaunchScreen.storyboard */; };
 		F3C3988F24B1ECE0002E66B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3988E24B1ECE0002E66B6 /* SearchViewController.swift */; };
 		F3C3989224B1ED2C002E66B6 /* ImageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3989124B1ED2C002E66B6 /* ImageContainerViewController.swift */; };
+		F3C3989824B8AA54002E66B6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3989724B8AA54002E66B6 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F3C3988824B1EB2A002E66B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C3988E24B1ECE0002E66B6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F3C3989124B1ED2C002E66B6 /* ImageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainerViewController.swift; sourceTree = "<group>"; };
+		F3C3989724B8AA54002E66B6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,7 @@
 				F3C3987A24B1EB28002E66B6 /* AppDelegate.swift */,
 				F3C3987C24B1EB28002E66B6 /* SceneDelegate.swift */,
 				F3C3989024B1ECE7002E66B6 /* Controllers */,
-				F3C3989324B22E2D002E66B6 /* Extensions */,
+				F3C3989624B8A9B2002E66B6 /* Model */,
 				F3C3988024B1EB28002E66B6 /* Main.storyboard */,
 				F3C3988324B1EB2A002E66B6 /* Assets.xcassets */,
 				F3C3988524B1EB2A002E66B6 /* LaunchScreen.storyboard */,
@@ -103,11 +105,12 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		F3C3989324B22E2D002E66B6 /* Extensions */ = {
+		F3C3989624B8A9B2002E66B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3C3989724B8AA54002E66B6 /* Response.swift */,
 			);
-			path = Extensions;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +232,7 @@
 				F3C3987B24B1EB28002E66B6 /* AppDelegate.swift in Sources */,
 				F3C3989224B1ED2C002E66B6 /* ImageContainerViewController.swift in Sources */,
 				F3C3987D24B1EB28002E66B6 /* SceneDelegate.swift in Sources */,
+				F3C3989824B8AA54002E66B6 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
