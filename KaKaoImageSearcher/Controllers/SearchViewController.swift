@@ -97,9 +97,17 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // ThumbnailImageView 초기화 후 반환
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailImageView", for: indexPath)
-        cell.contentView.backgroundColor = .systemBlue
+        // ThumbnailImageCell 초기화 후 반환
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailImageCell", for: indexPath) as! ThumbnailImageCell
+        
+        // Cell에 들어갈 썸네일 이미지 다운로드 후 cell.imageView에 넣기
+        // response nil 체크
+        guard let response = response else { return cell }
+        
+        let thumnailImageUrl = URL(string: response.documents[indexPath.row].thumbnail_url)
+        let data = try! Data(contentsOf: thumnailImageUrl!)
+        cell.thumbnailImageView.image = UIImage(data: data)
+        
         return cell
     }
     
