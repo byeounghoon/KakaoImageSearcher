@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         setSearchController()
+        setUpFlowLayout()
     }
     
     func setSearchController() {
@@ -88,6 +89,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
 
 //MARK: - CollectionView
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    private func setUpFlowLayout() {
+        let flowLayout = UICollectionViewFlowLayout()
+        // Cell 사이즈 지정
+        let cellWidth: CGFloat = (UIScreen.main.bounds.size.width - 32) / 3
+        flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        
+        // Cell 간격 지정
+        flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        flowLayout.minimumLineSpacing = 8
+        flowLayout.minimumInteritemSpacing = 4
+        collectionView.collectionViewLayout = flowLayout
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 검색 결과로 얻은 이미지의 수가 nil이면 0 반환
         if let count = response?.documents.count {
@@ -110,6 +124,5 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
-    
-    
+
 }
