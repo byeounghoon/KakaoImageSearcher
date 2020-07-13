@@ -9,5 +9,5 @@
 import UIKit
 
 class ThumbnailImageCell: UICollectionViewCell {
-    @IBOutlet var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
 }

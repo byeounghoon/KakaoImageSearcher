@@ -72,7 +72,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023.2" y="-177.33990147783251"/>
+            <point key="canvasLocation" x="1809" y="-177"/>
+        </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="T0d-jJ-ZnH">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetailViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="NV9-iC-mg1" customClass="ImageDetailViewController" customModule="KaKaoImageSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdN-8b-O12">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SFP-Cw-KKd">
+                                <rect key="frame" x="0.0" y="218.66666666666663" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SFP-Cw-KKd" secondAttribute="height" multiplier="1:1" id="wMo-i4-j1M"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SFP-Cw-KKd" firstAttribute="leading" secondItem="jKd-Hk-qf2" secondAttribute="leading" id="1Rl-5B-1lg"/>
+                            <constraint firstItem="SFP-Cw-KKd" firstAttribute="centerX" secondItem="fdN-8b-O12" secondAttribute="centerX" id="6st-tV-Ca9"/>
+                            <constraint firstItem="jKd-Hk-qf2" firstAttribute="trailing" secondItem="SFP-Cw-KKd" secondAttribute="trailing" id="acP-bv-vp6"/>
+                            <constraint firstItem="SFP-Cw-KKd" firstAttribute="centerY" secondItem="fdN-8b-O12" secondAttribute="centerY" id="n4N-fb-ay5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jKd-Hk-qf2"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="NXj-uT-Jh0"/>
+                        <barButtonItem image="chevron.left" catalog="system" id="oxD-Zf-VvG"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ilt-0U-UZf"/>
+                        <barButtonItem systemItem="action" id="ZhW-vd-wsi"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jsv-UO-qOH"/>
+                        <barButtonItem image="chevron.right" catalog="system" id="hJN-gK-x8O"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="zei-xP-irA"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="gZi-gM-bfw">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="SjS-aQ-FSw">
+                            <connections>
+                                <action selector="tapDismissButton:" destination="NV9-iC-mg1" id="sCx-t0-RxG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.down" catalog="system" id="7AF-sK-BsW">
+                            <connections>
+                                <action selector="tapSaveButton:" destination="NV9-iC-mg1" id="wkh-g4-ZGh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <connections>
+                        <outlet property="selectedImageView" destination="SFP-Cw-KKd" id="bBW-t2-hr3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ur-Xe-Rvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3244" y="-177"/>
         </scene>
         <!--보관함-->
         <scene sceneID="RCa-od-3rk">
@@ -132,9 +187,36 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="-177.33990147783251"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xXL-46-uF6">
+            <objects>
+                <navigationController storyboardIdentifier="ImageDetailNavi" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" toolbarHidden="NO" id="vUC-x6-YLm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x6q-y8-bhl">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZBa-f9-bC3">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="NV9-iC-mg1" kind="relationship" relationship="rootViewController" id="RzE-sR-Pr1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89r-g1-wa2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="-177"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="tray.fill" catalog="system" width="128" height="88"/>
     </resources>
 </document>

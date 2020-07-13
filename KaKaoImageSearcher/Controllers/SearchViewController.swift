@@ -12,7 +12,7 @@ let restAPIKey: String = "KakaoAK 939583921c9ced3da5147a6ac9f4cf4a"
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     
-    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     private let searchController = UISearchController(searchResultsController: nil)
     private var response: ImageResponse?
@@ -118,11 +118,34 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         // response nil 체크
         guard let response = response else { return cell }
         
-        let thumnailImageUrl = URL(string: response.documents[indexPath.row].thumbnail_url)
-        let data = try! Data(contentsOf: thumnailImageUrl!)
-        cell.thumbnailImageView.image = UIImage(data: data)
+        guard let thumbnailImageUrl = URL(string: response.documents[indexPath.row].thumbnail_url) else { return cell }
+        
+        cell.thumbnailImageView.load(url: thumbnailImageUrl)
         
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        guard let selectedImageVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectedImageViewController") as? SelectedImageViewController else {
+//            print(" SelectedImageVC can't not loaded.")
+//            return
+//        }
+        
+        guard let response = response else {
+            print(" Response Error")
+            return
+        }
+        
+//        selectedImageVC.document = response.documents[indexPath.row]
+        guard let tempNavi = self.storyboard?.instantiateViewController(withIdentifier: "ImageDetailNavi") as? UINavigationController else {
+            print(" ImageDetailNavi is not loaded")
+            return
+        }
+        
+        guard let imageDetailVC = tempNavi.viewControllers.first as? ImageDetailViewController else { return }
+        
+        imageDetailVC.document = response.documents[indexPath.row]
+        
+        self.present(tempNavi, animated: true, completion: nil)
+    }
 }
